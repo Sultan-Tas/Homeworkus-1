@@ -1,7 +1,11 @@
 package com.narxoz.rpg;
 
-import com.narxoz.rpg.character.Warrior;
-import com.narxoz.rpg.equipment.IronSword;
+import com.narxoz.rpg.character.Character;
+import com.narxoz.rpg.factory.*;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 /**
  * Main demonstration class for the RPG Character & Equipment System.
@@ -20,16 +24,22 @@ import com.narxoz.rpg.equipment.IronSword;
  */
 public class Main {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Map<String, CharacterFactory> registry = new HashMap<>();
+        registry.put("warrior", new WarriorFactory());
+        registry.put("mage", new MageFactory());
+
         System.out.println("=== RPG Character & Equipment System ===\n");
-        Warrior warrior = new Warrior("Conan");
-        IronSword ironSword = new IronSword();
-        warrior.checkEquipment();
-        warrior.equipWeapon(ironSword);
-        warrior.checkEquipment();
+
         // TODO: Demonstrate Factory Method Pattern
-        // Create different character types (Warrior, Mage, Archer, etc.)
-        // Think: How can you create characters without using if-else chains?
-        // Think: What class/interface should handle character creation?
+        System.out.println("Input character type:\n [Warrior], [Mage], [Archer]");
+        String classChoice = scan.nextLine();
+        System.out.println("Name of your Hero: ");
+        String name = scan.nextLine();
+        CharacterFactory factory = registry.get(classChoice.toLowerCase());
+        Character hero = factory.createCharacter(name);
+
+        hero.displayStats();
 
 
         // TODO: Demonstrate Abstract Factory Pattern
@@ -41,6 +51,8 @@ public class Main {
         // TODO: Show character stats
         // Display each character's attributes (health, mana, strength, intelligence)
         // Show their special abilities
+        hero.displayStats();
+        hero.useSpecialAbility();
 
 
         // TODO: Equip characters with different themed sets

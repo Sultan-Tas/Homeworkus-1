@@ -9,7 +9,7 @@ You need to create different character types, but the client code shouldn't know
 
 ### Questions to Answer
 1. **Who should be responsible for creating characters?**
-   - A factory class? An abstract creator? The character itself?
+   - [A factory class?] An abstract creator? The character itself?
 
 2. **How do you avoid if-else chains?**
    ```java
@@ -51,7 +51,7 @@ Character
 └── createArcher()
 ```
 
-**Which is most aligned with Factory Method pattern? Research and decide!**
+**Which is most aligned with Factory Method pattern? Research and decide! (Approach 1)**
 
 ---
 
