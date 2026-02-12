@@ -18,10 +18,12 @@ public interface Character {
 
     // TODO: Define common character behaviors
     String getName();
+    String getCharacterClass();
     int getHealth();
     int getMana();
     int getStrength();
     int getIntelligence();
+    String getSpecialAbility();
     void displayStats();
     void useSpecialAbility();
 

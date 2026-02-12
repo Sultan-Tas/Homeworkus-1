@@ -2,30 +2,27 @@ package com.narxoz.rpg.character;
 import com.narxoz.rpg.equipment.Armor;
 import com.narxoz.rpg.equipment.Weapon;
 
-public class Mage implements Character {
+public class Archer implements Character {
 
     private String name;
-    private String className = "Mage";
+    private String className = "Archer";
     private int health;
     private int mana;
     private int strength;
     private int intelligence;
-    private String ability = "Moment of Clarity";
+    private String ability = "LEAF VILLAGE TECHNIQUE";
     private Weapon weapon = null;
     private Armor armor = null;
 
-    // TODO: Add fields for equipped weapon and armor
-
-    public Mage(String name) {
+    public Archer(String name) {
         this.name = name;
-        // Mage stats: low HP and STR, high mana and INT
-        this.health = 90;
-        this.mana = 200;
-        this.strength = 25;
-        this.intelligence = 80;
+        // Archer stats: average HP and STR, less than average mana and INT
+        this.health = 110;
+        this.mana = 90;
+        this.strength = 50;
+        this.intelligence = 60;
     }
 
-    // TODO: Implement methods from Character interface
     @Override
     public String getName() {
         return name;
@@ -57,13 +54,8 @@ public class Mage implements Character {
     }
 
     @Override
-    public String getSpecialAbility() {
-        return ability;
-    }
-
-    @Override
     public void displayStats() {
-        System.out.println("=== " + name + " (Mage) ===");
+        System.out.println("=== " + name + " (Archer) ===");
         System.out.println("Health: " + health);
         System.out.println("Mana: " + mana);
         System.out.println("Strength: " + strength);
@@ -71,13 +63,16 @@ public class Mage implements Character {
     }
 
     @Override
+    public String getSpecialAbility() {
+        return ability;
+    }
+
+    @Override
     public void useSpecialAbility() {
-        System.out.println(name + " uses [MOMENT OF CLARITY] -> INT Greatly increased for next move!");
+        System.out.println(name + " uses [Leaf Village Technique] -> Next incoming attack will be dodged!");
     }
 
 
-
-    // TODO: Add equipment-related methods
     @Override
     public void equipWeapon(Weapon weapon){
         this.weapon = weapon;

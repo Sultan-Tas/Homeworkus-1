@@ -18,7 +18,7 @@ public interface Armor {
     int getDefense();
     String getArmorInfo();
     String getArmorType();
-    int getPhysicalRes();
-    int getMagicRes();
+    double getPhysicalRes();
+    double getMagicRes();
 
 }

@@ -1,4 +1,4 @@
-package com.narxoz.rpg.factory;
+package com.narxoz.rpg.factory.characters;
 
 import com.narxoz.rpg.character.Character;
 import com.narxoz.rpg.character.Warrior;

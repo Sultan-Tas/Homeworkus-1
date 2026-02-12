@@ -23,10 +23,12 @@ import java.sql.SQLOutput;
 public class Warrior implements Character {
 
     private String name;
+    private String className = "Warrior";
     private int health;
     private int mana;
     private int strength;
     private int intelligence;
+    private String ability = "Berserker Rage";
     private Weapon weapon = null;
     private Armor armor = null;
 
@@ -49,6 +51,12 @@ public class Warrior implements Character {
     public String getName() {
         return name;
     }
+
+    @Override
+    public String getCharacterClass() {
+        return className;
+    }
+
 
     @Override
     public int getHealth() {
@@ -78,6 +86,11 @@ public class Warrior implements Character {
         System.out.println("Intelligence: " + intelligence);
     }
 
+    @Override
+    public String getSpecialAbility() {
+        return ability;
+    }
+
     public void useSpecialAbility() {
         System.out.println(name + " uses [BERSERKER RAGE] -> Strength temporarily increased!");
     }
@@ -98,8 +111,8 @@ public class Warrior implements Character {
     @Override
     public void checkEquipment(){
         System.out.println("\tCurrent Equipment\n" +
-                "Weapon:[" + ((weapon == null)?"Empty" :weapon.getWeaponInfo()) + "]\n" +
-                "Armor:[" + ((armor == null)?"Empty":armor.getArmorInfo()) + "]\n");
+                "\tWeapon:[" + ((weapon == null)?"Empty" :weapon.getWeaponType())+" - Damage: "+weapon.getDamage()+"]\n" +
+                "\tArmor:[" + ((armor == null)?"Empty":armor.getArmorType())+" - Defense: "+armor.getDefense()+"]\n");
     }
 
     @Override

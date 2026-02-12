@@ -1,4 +1,6 @@
-package com.narxoz.rpg.equipment;
+package com.narxoz.rpg.equipment.medieval;
+
+import com.narxoz.rpg.equipment.Weapon;
 
 /**
  * Example concrete weapon implementation - Medieval theme.
@@ -30,7 +32,7 @@ public class IronSword implements Weapon {
 
     public IronSword() {
         this.damage = 25;
-        this.weaponType = "Sword";
+        this.weaponType = "Iron Sword";
     }
 
     // TODO: Implement methods from Weapon interface
@@ -55,10 +57,5 @@ public class IronSword implements Weapon {
     }
 
     // TODO: Consider adding theme-specific properties
-    // For example, Medieval weapons might have:
-    // - Durability
-    // - Weight
-    // Magic weapons might have:
-    // - Mana boost
-    // - Spell power
+    // Medieval set provides x1.2 multiplier to strength and health
 }
