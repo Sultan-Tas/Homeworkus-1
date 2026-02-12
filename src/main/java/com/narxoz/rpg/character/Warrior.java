@@ -101,4 +101,14 @@ public class Warrior implements Character {
                 "Weapon:[" + ((weapon == null)?"Empty" :weapon.getWeaponInfo()) + "]\n" +
                 "Armor:[" + ((armor == null)?"Empty":armor.getArmorInfo()) + "]\n");
     }
+
+    @Override
+    public void unequipWeapon() {
+        this.weapon = null;
+    }
+
+    @Override
+    public void unequipArmor() {
+        this.armor = null;
+    }
 }

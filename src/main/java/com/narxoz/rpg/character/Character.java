@@ -29,4 +29,7 @@ public interface Character {
     void equipWeapon(Weapon weapon);
     void equipArmor(Armor armor);
     void checkEquipment();
+
+    void unequipWeapon();
+    void unequipArmor();
 }
