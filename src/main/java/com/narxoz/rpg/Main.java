@@ -1,5 +1,8 @@
 package com.narxoz.rpg;
 
+import com.narxoz.rpg.character.Warrior;
+import com.narxoz.rpg.equipment.IronSword;
+
 /**
  * Main demonstration class for the RPG Character & Equipment System.
  *
@@ -18,7 +21,11 @@ package com.narxoz.rpg;
 public class Main {
     public static void main(String[] args) {
         System.out.println("=== RPG Character & Equipment System ===\n");
-
+        Warrior warrior = new Warrior("Conan");
+        IronSword ironSword = new IronSword();
+        warrior.checkEquipment();
+        warrior.equipWeapon(ironSword);
+        warrior.checkEquipment();
         // TODO: Demonstrate Factory Method Pattern
         // Create different character types (Warrior, Mage, Archer, etc.)
         // Think: How can you create characters without using if-else chains?

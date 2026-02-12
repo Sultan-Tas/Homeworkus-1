@@ -1,4 +1,8 @@
 package com.narxoz.rpg.character;
+import com.narxoz.rpg.equipment.Armor;
+import com.narxoz.rpg.equipment.Weapon;
+
+import java.sql.SQLOutput;
 
 /**
  * Example concrete implementation of a Character.
@@ -23,6 +27,8 @@ public class Warrior implements Character {
     private int mana;
     private int strength;
     private int intelligence;
+    private Weapon weapon = null;
+    private Armor armor = null;
 
     // TODO: Add fields for equipped weapon and armor
     // Think: Should Warrior know about its equipment?
@@ -30,7 +36,7 @@ public class Warrior implements Character {
 
     public Warrior(String name) {
         this.name = name;
-        // Warrior stats: high health and strength, low mana and intelligence
+        // Warrior stats: high HP and STR, low mana and INT
         this.health = 150;
         this.mana = 30;
         this.strength = 80;
@@ -38,11 +44,30 @@ public class Warrior implements Character {
     }
 
     // TODO: Implement methods from Character interface
-    // You need to define those methods in Character interface first!
 
-    // Example method structure:
+    @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public int getHealth() {
+        return health;
+    }
+
+    @Override
+    public int getMana() {
+        return mana;
+    }
+
+    @Override
+    public int getStrength() {
+        return strength;
+    }
+
+    @Override
+    public int getIntelligence() {
+        return intelligence;
     }
 
     public void displayStats() {
@@ -54,13 +79,26 @@ public class Warrior implements Character {
     }
 
     public void useSpecialAbility() {
-        System.out.println(name + " uses BERSERKER RAGE! Strength temporarily increased!");
+        System.out.println(name + " uses [BERSERKER RAGE] -> Strength temporarily increased!");
     }
 
-    // TODO: Add equipment-related methods
-    // Examples:
-    // - void equipWeapon(Weapon weapon)
-    // - void equipArmor(Armor armor)
-    // - void displayEquipment()
 
+
+    // TODO: Add equipment-related methods
+    @Override
+    public void equipWeapon(Weapon weapon){
+        this.weapon = weapon;
+    }
+
+    @Override
+    public void equipArmor(Armor armor){
+        this.armor = armor;
+    }
+
+    @Override
+    public void checkEquipment(){
+        System.out.println("\tCurrent Equipment\n" +
+                "Weapon:[" + ((weapon == null)?"Empty" :weapon.getWeaponInfo()) + "]\n" +
+                "Armor:[" + ((armor == null)?"Empty":armor.getArmorInfo()) + "]\n");
+    }
 }

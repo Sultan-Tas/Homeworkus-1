@@ -34,15 +34,18 @@ public class IronSword implements Weapon {
     }
 
     // TODO: Implement methods from Weapon interface
-    // Define those methods in the Weapon interface first!
 
-    // Example method structure:
     public int getDamage() {
         return damage;
     }
 
     public String getWeaponInfo() {
         return "Iron Sword (Medieval) - A sturdy blade forged from iron";
+    }
+
+    @Override
+    public String getWeaponType() {
+        return weaponType;
     }
 
     public void displayInfo() {
