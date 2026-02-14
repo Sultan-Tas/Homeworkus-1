@@ -94,11 +94,8 @@ public class Main {
         // Show character stats
 
         displayCharacterInfo(warrior);
-        warrior.checkEquipment();
         displayCharacterInfo(mage);
-        mage.checkEquipment();
         displayCharacterInfo(archer);
-        archer.checkEquipment();
 
         //choice of character
         System.out.println("\nInput character type:\n [Warrior], [Mage], [Archer]");
@@ -118,7 +115,6 @@ public class Main {
         hero.equipArmor(heroArmor);
 
         displayCharacterInfo(hero);
-        hero.checkEquipment();
 
 
         // In comments, explain how easy it would be to:
@@ -144,5 +140,6 @@ public class Main {
                 "INT: " + hero.getIntelligence() + "\n" +
                 "MANA: " + hero.getMana() + "\n" +
                 "Special Ability: " + hero.getSpecialAbility() + "\n");
+        hero.checkEquipment();
     }
 }

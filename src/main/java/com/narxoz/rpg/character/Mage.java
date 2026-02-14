@@ -2,74 +2,18 @@ package com.narxoz.rpg.character;
 import com.narxoz.rpg.equipment.Armor;
 import com.narxoz.rpg.equipment.Weapon;
 
-public class Mage implements Character {
-
-    private String name;
-    private String className = "Mage";
-    private int health;
-    private int mana;
-    private int strength;
-    private int intelligence;
-    private String ability = "Moment of Clarity";
-    private Weapon weapon = null;
-    private Armor armor = null;
+public class Mage extends Character {
 
     // TODO: Add fields for equipped weapon and armor
 
     public Mage(String name) {
-        this.name = name;
-        // Mage stats: low HP and STR, high mana and INT
-        this.health = 90;
-        this.mana = 200;
-        this.strength = 25;
-        this.intelligence = 80;
+        super(name, 90, 200, 25, 80);
+        //Mage stats: low HP and STR, high Mana and INT
+        className = "Mage";
+        ability = "Moment of Clarity";
     }
 
     // TODO: Implement methods from Character interface
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getCharacterClass() {
-        return className;
-    }
-
-    @Override
-    public int getHealth() {
-        return health;
-    }
-
-    @Override
-    public int getMana() {
-        return mana;
-    }
-
-    @Override
-    public int getStrength() {
-        return strength;
-    }
-
-    @Override
-    public int getIntelligence() {
-        return intelligence;
-    }
-
-    @Override
-    public String getSpecialAbility() {
-        return ability;
-    }
-
-    @Override
-    public void displayStats() {
-        System.out.println("=== " + name + " (Mage) ===");
-        System.out.println("Health: " + health);
-        System.out.println("Mana: " + mana);
-        System.out.println("Strength: " + strength);
-        System.out.println("Intelligence: " + intelligence);
-    }
-
     @Override
     public void useSpecialAbility() {
         System.out.println(name + " uses [MOMENT OF CLARITY] -> INT Greatly increased for next move!");
@@ -78,30 +22,5 @@ public class Mage implements Character {
 
 
     // TODO: Add equipment-related methods
-    @Override
-    public void equipWeapon(Weapon weapon){
-        this.weapon = weapon;
-    }
-
-    @Override
-    public void equipArmor(Armor armor){
-        this.armor = armor;
-    }
-
-    @Override
-    public void checkEquipment(){
-        System.out.println("\tCurrent Equipment\n" +
-                "\tWeapon:[" + ((weapon == null)?"Empty" :weapon.getWeaponType())+" - Damage: "+weapon.getDamage()+"]\n" +
-                "\tArmor:[" + ((armor == null)?"Empty":armor.getArmorType())+" - Defense: "+armor.getDefense()+"]\n");
-    }
-
-    @Override
-    public void unequipWeapon() {
-        this.weapon = null;
-    }
-
-    @Override
-    public void unequipArmor() {
-        this.armor = null;
-    }
+    //everything in the Abstract Class
 }

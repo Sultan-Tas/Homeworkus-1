@@ -20,29 +20,16 @@ import java.sql.SQLOutput;
  * - Archer (balanced stats, ranged combat)
  * - (Optional) Additional classes: Rogue, Paladin, etc.
  */
-public class Warrior implements Character {
-
-    private String name;
-    private String className = "Warrior";
-    private int health;
-    private int mana;
-    private int strength;
-    private int intelligence;
-    private String ability = "Berserker Rage";
-    private Weapon weapon = null;
-    private Armor armor = null;
+public class Warrior extends Character {
 
     // TODO: Add fields for equipped weapon and armor
-    // Think: Should Warrior know about its equipment?
 
 
     public Warrior(String name) {
-        this.name = name;
+        super(name, 150, 30, 80, 20);
         // Warrior stats: high HP and STR, low mana and INT
-        this.health = 150;
-        this.mana = 30;
-        this.strength = 80;
-        this.intelligence = 20;
+        className = "Warrior";
+        ability = "Berserker Rage";
     }
 
     // TODO: Implement methods from Character interface
